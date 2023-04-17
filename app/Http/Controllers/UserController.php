@@ -18,7 +18,15 @@ class UserController extends Controller
             if (!Auth::attempt(['phone' => $phone, 'password' => $request->password])) {
                 return redirect()->back()->with('error', 'Wrong Phone or Password');
             } else {
-                if (Auth::user()->isVerified == false) {
+                if (Auth::user()->isVerified == true) {
+                    if (Auth::user()->role == 0) {
+                        return redirect()->route('admin.dashboard');
+                    } elseif (Auth::user()->role == 1) {
+                        return redirect()->route('receiver.dashboard');
+                    } elseif (Auth::user()->role == 2) {
+                        return redirect()->route('donor.dashboard');
+                    }
+                } else {
                     Auth::logout();
                     $verification = $this->sendOTP($phone);
                     if ($verification) {
@@ -26,14 +34,6 @@ class UserController extends Controller
                             ->with('success', 'OTP has been sent to ' . $phone . 'Please verify your phone number to continue');
                     } else {
                         return redirect()->back()->with('error', 'Failed to send OTP. Please try again later.');
-                    }
-                } else {
-                    if (Auth::user()->role == 0) {
-                        return redirect()->route('admin.dashboard');
-                    } elseif (Auth::user()->role == 1) {
-                        return redirect()->route('receiver.dashboard');
-                    } elseif (Auth::user()->role == 2) {
-                        return redirect()->route('donor.dashboard');
                     }
                 }
             }

@@ -3,5 +3,5 @@
     <br>
     This is Admin Dashboard.
     <br>
-    <a href="{{ route('logout') }}">Logout</a>
+    <a href="{{ route('admin.logout') }}">Logout</a>
 </h1>

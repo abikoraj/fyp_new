@@ -16,7 +16,7 @@ class AdminSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',    // Admin's name
-            'phone' => '9800000000',    // Admin's phone number
+            'phone' => '+9779800000000',    // Admin's phone number
             'password' => bcrypt('Admin@123'),    // Admin's password
             'role' => 0,    // Admin's role
             'isVerified' => true

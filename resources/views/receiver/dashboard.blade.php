@@ -3,5 +3,5 @@
     <br>
     This is Receiver Dashboard.
     <br>
-    <a href="{{ route('logout') }}">Logout</a>
+    <a href="{{ route('receiver.logout') }}">Logout</a>
 </h1>
