@@ -10,6 +10,7 @@ return[
     ],
 
     'color' => [
+        'frontend_primary_color' => '#07D84C',
         'sidebar_color' => '#092433',
         'sidebar_txt_color' => '#C1D6F0',
         'nav_color' => '#0A243E',
