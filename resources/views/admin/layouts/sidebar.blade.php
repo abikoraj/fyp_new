@@ -16,6 +16,24 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('city.index') }}" class="nav-link {{ Route::is('city.index') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-map-marker-alt"></i>
+                            <p>Cities</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('org-type.index') }}" class="nav-link {{ Route::is('org-type.index') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-industry"></i>
+                            <p>Organization Type</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('food-cat.index') }}" class="nav-link {{ Route::is('food-cat.index') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>Food Category</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- Sidebar Menu -->

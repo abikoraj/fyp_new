@@ -47,6 +47,16 @@
         <!-- Main Footer -->
         @include('admin.layouts.footer')
     </div>
+
+    <script>
+        // Navbar Collapse Toggle
+        var isNavCollapse = JSON.parse(localStorage.getItem("sidebar_collapse"))
+        isNavCollapse ? $('body').addClass('sidebar-collapse') : null;
+
+        $('#nav_collapse').on('click', function() {
+            localStorage.setItem("sidebar_collapse", isNavCollapse == true ? false : true);
+        });
+    </script>
 </body>
 
 </html>
